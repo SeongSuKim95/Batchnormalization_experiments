@@ -1,7 +1,6 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-import torch.backends.cudnn as cudnn
 import torch.optim as optim
 import os
 import matplotlib.pyplot as plt
@@ -112,7 +111,7 @@ train_dataset = torchvision.datasets.CIFAR10(root='./data', train=True, download
 test_dataset = torchvision.datasets.CIFAR10(root='./data', train=False, download=True, transform=transform_test)
 
 train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=128, shuffle=True, num_workers=4)
-test_loader = torch.utils.data.DataLoader(test_dataset, batch_size=100, shuffle=False, num_workers=4)
+test_loader = torch.utils.data.DataLoader(test_dataset, batch_size=128, shuffle=False, num_workers=4)
 
 # examples = iter(train_loader)
 # example_data, example_targets = examples.next()
